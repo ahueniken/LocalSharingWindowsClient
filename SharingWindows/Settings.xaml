@@ -1,0 +1,23 @@
+﻿<Page x:Class="SharingWindows.Settings"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:properties="clr-namespace:SharingWindows.Properties"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Unloaded="Page_Unloaded"
+	  Title="Settings"
+      KeepAlive="True">
+
+    <StackPanel>
+        <TextBlock Text="Username"  Height="40" Width="200" FontSize="20"/>
+        <TextBox Text="{Binding Source={StaticResource Settings}, Path=Default.Username, Mode=TwoWay}" Height="40" Width="200" FontSize="20"/>
+        <TextBlock Text="Password"  Height="40" Width="200" FontSize="20"/>
+        <PasswordBox x:Name="passwordBox" Height="40" Width="200" FontSize="20"/>
+        <Button x:Name="authButton" Click="authButton_Click" Width="200" Margin="0,10"> Update Auth Token </Button>
+        <Button x:Name="stopSharingButton" Click="stopSharingButton_Click" Width="200" Margin="0,0">Stop Sharing</Button>
+        <Button x:Name="restartSharingButton" Click="restartSharingButton_Click" Width="200" Margin="0,10">Restart Sharing</Button>
+
+    </StackPanel>
+</Page>
